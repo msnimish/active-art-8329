@@ -1,24 +1,24 @@
 import * as types from "./actionTypes";
 import axios from "axios";
 
-const getProductsRequest = () => {
+const getProductRequest = () => {
   return {
-    type: types.GET_PRODUCTS_REQUEST,
+    type: types.GET_SINGLE_PRODUCT_REQUEST,
   };
 };
 
-const getProducts = (queryParams) => (dispatch) => {
+const getProduct = (queryParams) => (dispatch) => {
   
-  dispatch(getProductsRequest());
+  dispatch(getProductRequest());
   return axios
     .get(`http://localhost:8080/albums`, queryParams)
     .then((res) => {
-      dispatch({ type: types.GET_PRODUCTS_SUCCESS, payload: res.data });
+      dispatch({ type: types.GET_SINGLE_PRODUCT_SUCCESS, payload: res.data });
     })
-    .catch(dispatch({ type: types.GET_PRODUCTS_FAILURE }));
+    .catch(dispatch({ type: types.GET_SINGLE_PRODUCT_FAILURE }));
 };
 
-export { getProductsRequest, getProducts };
+export { getProductRequest, getProduct };
 
 
 
