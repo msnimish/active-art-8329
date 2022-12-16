@@ -6,11 +6,13 @@ import Basket from './Pages/Basket';
 
 
 
+
 function App() {
   return (
     <div className="App">
      {/* <AllRoutes/> */}
-     <Basket/>
+     {/* <Basket/> */}
+   
       
       
 
