@@ -10,7 +10,7 @@ const SliderFilter = ({baseColor="orange"}) => {
 
   return (
     <Menu>
-    <MenuButton as={Button} minWidth={"200px"} rightIcon={<ChevronDownIcon />}>
+    <MenuButton as={Button} minWidth={"200px"} rightIcon={<ChevronDownIcon/>}>
       Actions
     </MenuButton>
     <MenuList pb={"15px"}>
