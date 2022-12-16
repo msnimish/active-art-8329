@@ -2,7 +2,8 @@ import { Box, Divider, Flex, HStack, Icon, Image, Link, Stack, Text, VStack } fr
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { GrInstagram } from "react-icons/gr";
-import React from 'react'
+import React from 'react';
+import Logo from "../../../Assets/StyleNovaLogo.svg"
 
 const Footer = () => {
 
@@ -11,6 +12,9 @@ bg="white"
 _dark={{
   bg: "gray.600",
 }}
+width="70vw"
+margin="auto"
+fontFamily="Proxima Nova"
 >
 <Stack
   direction={{
@@ -23,7 +27,7 @@ _dark={{
 >
   <Flex justify="center">
     <Image
-      src="http://placehold.jp/2a2a2c/ffffff/200x100.png?text=Company%20Logo&css=%7B%22font-size%20%22%3A%22%2016px%22%7D"
+      src={ Logo }
       alt="Company Logo"
       rounded="lg"
       width={{
@@ -46,7 +50,7 @@ _dark={{
     justify="space-around"
     fontSize={{
       base: "12px",
-      md: "16px",
+      md: "14px",
     }}
     color="gray.800"
     _dark={{
@@ -58,12 +62,12 @@ _dark={{
     }}
   >
     <Flex justify="start" direction="column">
-      <Link textTransform="uppercase">Pre-Sale FAQS</Link>
-      <Link textTransform="uppercase">Submit a ticket</Link>
+      <Link textTransform="uppercase">Women</Link>
+      <Link textTransform="uppercase">Beauty</Link>
     </Flex>
     <Flex justify="start" direction="column">
-      <Link textTransform="uppercase">Services</Link>
-      <Link textTransform="uppercase">Theme Tweak</Link>
+      <Link textTransform="uppercase">Men</Link>
+      <Link textTransform="uppercase">Shoes & Bags</Link>
     </Flex>
   </HStack>
   <HStack
@@ -72,7 +76,7 @@ _dark={{
     justify="space-around"
     fontSize={{
       base: "12px",
-      md: "16px",
+      md: "14px",
     }}
     color="gray.800"
     _dark={{
@@ -84,9 +88,9 @@ _dark={{
     }}
   >
     <Flex justify="start" direction="column">
-      <Link textTransform="uppercase">Show Case</Link>
-      <Link textTransform="uppercase">Widget Kit</Link>
-      <Link textTransform="uppercase">Support</Link>
+      <Link textTransform="uppercase">Kids</Link>
+      <Link textTransform="uppercase">Winter Wear</Link>
+      <Link textTransform="uppercase">Age Store</Link>
     </Flex>
     <Flex justify="start" direction="column">
       <Link textTransform="uppercase">About Us</Link>
@@ -119,7 +123,7 @@ _dark={{
     </Link>
     <Link>
       <Icon
-        color="gray.800"
+        color="#1e1e1e"
         _dark={{
           color: "white",
         }}
