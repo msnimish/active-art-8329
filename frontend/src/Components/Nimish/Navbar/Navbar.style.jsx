@@ -27,6 +27,9 @@ export const NavbarWrapper = styled.div`
         flex-direction: row;
         align-items: center;
     }
+    .searchIcon{
+        display:none;
+    }
     .rightHalf{
         width: 25%;
         display: flex;
@@ -37,12 +40,35 @@ export const NavbarWrapper = styled.div`
     .leftHalf>InputGroup{
         background-color: #ECEDEB;
     }
-    .rightHalf>Button{
-        border-left: 1px solid #c7c7c7;
-        border-radius: 0px;
+    
+
+    .noOfItems{
+        font-size:10px;
+        color: #fff;
+        background: #FAA619;
+        border-radius:50%;
+        padding: 1px 5px;
+        position:relative;
+        left:-32px;
+        top:-10px;
+        opacity:0.9;
     }
-    .rightHalf>Button:hover{
-        background-color: transparent;
-        color: #FAA619
+
+    @media all and (max-width: 992px){
+        .NavContainer{
+            width:90%;
+        }
+        .rightHalf>Button{
+            display: none;
+        }
+    }
+
+    @media all and (max-width: 568px){
+        .inputSearch{
+            display: none;
+        }
+        .searchIcon{
+            display: block;
+        }
     }
 `

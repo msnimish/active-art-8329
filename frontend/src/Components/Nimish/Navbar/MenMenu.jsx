@@ -1,5 +1,6 @@
 import { Menu, MenuButton, MenuList, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { MenMenuItems } from './MenMenuItems'
 
 const MenMenu = () => {
@@ -13,7 +14,7 @@ const MenMenu = () => {
             onMouseEnter={onOpen}
             onMouseLeave={onClose}
             > 
-                Men
+                <Link to="/p">Men</Link>
             </MenuButton>
             </li>
             <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt="13px">

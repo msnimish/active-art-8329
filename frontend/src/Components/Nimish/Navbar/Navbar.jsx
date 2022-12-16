@@ -1,12 +1,15 @@
-import { Button, Image, Input, InputGroup, InputLeftElement, theme } from '@chakra-ui/react';
+import { Button, Image, Input, InputGroup, InputLeftElement, theme, chakra } from '@chakra-ui/react';
 import React from 'react';
 import Logo from "../../../Assets/StyleNovaLogo.svg";
 import { NavbarWrapper } from "./Navbar.style.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
-import { HiOutlineSearch, HiOutlineShoppingBag } from "react-icons/hi";
+import { HiOutlineSearch, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
 import NavMenu from './NavMenu';
 import MoreMenu from './MoreMenu';
 import { Link } from 'react-router-dom';
+import HamburgerMenu from './HamburgerMenu';
+import Login from './Signup';
+import Signup from './Signup';
 
 
 const Navbar = () => {
@@ -17,11 +20,12 @@ const Navbar = () => {
     <NavbarWrapper>
       <div className="NavbarContainer">
         <div className='leftHalf'>
+          <HamburgerMenu/>
           <Link to="/">
             <Image src={Logo} w="150px"/>
           </Link>
-          <NavMenu></NavMenu>
-          <InputGroup  w="200px" bg="#ECEDEB">
+          <NavMenu width="100%"></NavMenu>
+          <InputGroup  w="200px" bg="#ECEDEB"  className='inputSearch'>
             <InputLeftElement
               pointerEvents='none'
               children={<HiOutlineSearch color='#7E8A9D' />}
@@ -30,10 +34,32 @@ const Navbar = () => {
           </InputGroup>
         </div>
         <div className='rightHalf'>
-          <MoreMenu />
-          <Button fontFamily={"Proxima Nova"} bg={"none"} >Sign Up / Sign In</Button>
-          <MdFavoriteBorder size={"20px"} color={"#1E1E1E"}/>
-          <HiOutlineShoppingBag size={"20px"} color={"#1E1E1E"}/>
+          <MoreMenu/>
+          <Signup/>
+          <HiSearch size={"1.25em"} color="#1E1e1e" className='searchIcon'/>
+          <MdFavoriteBorder size={"1.5em"} color={"#1E1E1E"}/>
+          <chakra.span pos="relative" display="inline-block">
+            <HiOutlineShoppingBag size={"1.5em"} color={"#1E1E1E"} className="basketIcon"/>
+            <chakra.span
+              pos="absolute"
+              top="-1px"
+              right="-1px"
+              px={2}
+              py={1}
+              fontSize="xs"
+              fontWeight="800"
+              fontFamily={"Proxima Nova"}
+              lineHeight="none"
+              color="white"
+              transform="translate(50%,-50%)"
+              bg="#FAA619"
+              rounded="full"
+            >
+              4
+            </chakra.span>
+          </chakra.span>
+          
+          {/* <circle className='noOfItems'>4</circle> */}
         </div>
 
       </div>
