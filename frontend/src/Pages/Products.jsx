@@ -14,18 +14,21 @@ import { getProducts } from '../Redux/ProductsReducer/action';
 
 const Products = () => {
   const dispatch = useDispatch();
-  const [searchPrams, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams()
 
 
  
 
   const productList = useSelector((reduxStore) => reduxStore.ProductsReducer.products);
+  
 
-  const query = {"brand" : searchPrams.getAll("brand")}
- 
+  const query = {}
+ query.brand = searchParams.getAll("brand")
+ query.cat = searchParams.getAll("cat")
+ query.fit = searchParams.getAll("fit")
 
   useEffect(()=>{
-    dispatch(getProducts({params: query}))
+    dispatch(getProducts({params : query}))
     setSearchParams(query)
   },[])
 
