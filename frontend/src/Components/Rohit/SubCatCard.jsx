@@ -13,7 +13,7 @@ const SubCatCard = ({subCat = "The perfect latte"}) => {
             display={"flex"}
             alignItems={"center"}
             cursor="pointer"
-            _hover={{ border: `1px solid red` }}
+            _hover={{ border: `1px solid orange` }}
         >
             <Image
                 maxW={{ base: '100%', sm: '40px' }}
