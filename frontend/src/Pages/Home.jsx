@@ -1,48 +1,63 @@
 import React from "react";
 import Caraousel from "../Components/Abdul/Caraousel";
 import { extendTheme } from "@chakra-ui/react";
+import ProductHeader from "../Components/Abdul/ProductHeader";
+import UnmissableOffers from "../Components/Abdul/UnmissableOffers";
+import WinterStore from "../Components/Abdul/WinterStore";
 import { Image, Text, Box, Flex, Link } from "@chakra-ui/react";
+import TrendingOffers from "../Components/Abdul/TrendingOffers";
+import Wathes from "../Components/Abdul/Wathes";
+import HottestDeals from "../Components/Abdul/HottestDeals";
+import PremiumEdit from "../Components/Abdul/PremiumEdit";
+import BigBrandsBigDiscounts from "../Components/Abdul/BigBrandsBigDiscounts";
+import BrandsWeLove from "../Components/Abdul/BrandsWeLove";
+import TopDealsIn from "../Components/Abdul/TopDealsIn";
 
 const Home = () => {
-  const breakpoints = {
-    sm: "320px",
-    md: "768px",
-    lg: "960px",
-    xl: "1200px",
-    "2xl": "1536px",
-  };
-  const theme = extendTheme({ breakpoints });
   return (
     <div>
-      <Caraousel />
-      <Image
-        width={{ base: "50%", md: "80%", sm: "100%" }}
-        m="auto"
-        src="https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/Uber-HP-Desktop-PromoStrip2-08Dec2022.jpg"
-        w="100%"
-        mt="40px"
-      />
-      {/* <Box mt="40px" mb="100px">
-        <Text fontSize="25px" fontWeight="700">
-          Our Benifit
-        </Text>
-        <hr style={{ width: "5%", height: "5px", backgroundColor: "yellow" }} />
-        <Flex mt="20px">
-          <Image src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg" />
-          <Image src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg" />
-          <Image src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg" />
-        </Flex>
-      </Box>
-      <Box p={4} display={{ md: "flex" }}>
-        <Box flexShrink={0}>
-          <Image
-            borderRadius="lg"
-            width={{ md: 40 }}
-            src="https://bit.ly/2jYM25F"
-            alt="Woman paying for a purchase"
-          />
+      <Box width={{ base: "100%", md: "80%", sm: "100%" }} margin="auto">
+        {/* Product Caraousel */}
+        <Caraousel />
+        {/* Offer Image */}
+        <Image
+          width={{ base: "100%", md: "100%", sm: "98%" }}
+          m="auto"
+          src="https://lmsin.net/cdn-cgi/image/w=1232,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/Uber-HP-Desktop-PromoStrip2-15Dec2022.gif"
+          w="100%"
+          mt="40px"
+        />
+        {/* Company Benifits  */}
+        <Box mt="40px" width={{ base: "100%", md: "100%", sm: "98%" }}>
+          <ProductHeader text="Our Benifits" />
+
+          <Flex mt="20px">
+            <Image
+              src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg"
+              width="33%"
+            />
+            <Image
+              src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg"
+              width="33%"
+            />
+            <Image
+              src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg"
+              width="33%"
+            />
+          </Flex>
         </Box>
-      </Box>{" "} */}
+        {/* Unmissable Offers*/}
+        <UnmissableOffers />
+        <WinterStore />
+        <TrendingOffers />
+        <Wathes />
+        <HottestDeals />
+        <PremiumEdit />
+        <TopDealsIn />
+        <BigBrandsBigDiscounts />
+        <BrandsWeLove />
+        <HottestDeals />
+      </Box>
     </div>
   );
 };
