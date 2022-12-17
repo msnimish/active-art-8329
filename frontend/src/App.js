@@ -8,12 +8,14 @@ import Footer from './Components/Nimish/Footer/Footer';
 
 
 
+
 function App() {
   return (
     <div className="App">
-     
-     <Navbar/>
-     <Footer/>
+
+     {/* <AllRoutes/> */}
+     {/* <Basket/> */}
+   
       
       
 
