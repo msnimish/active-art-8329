@@ -27,25 +27,3 @@ export { getProducts };
 
 
 
-
-/*
-const getMusicSuccess = (payload)=>{
-    return {
-        type: types.GET_MUSIC_SUCCESS,
-        payload
-    }
-}
-
-const getMusicFailure = ()=>{
-    return {
-        type: types.GET_MUSIC_FAILURE
-    }
-}
-
-
-const getMusic = (dispatch) => {
-axios
-.get(`http://localhost:8080/albums`)
-.then((res)=> dispatch(getMusicSuccess(res.data)))
-}
-*/
