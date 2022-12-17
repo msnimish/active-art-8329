@@ -15,6 +15,7 @@ function App() {
 
      {/* <AllRoutes/> */}
      {/* <Basket/> */}
+     <Navbar/>
    
       
       

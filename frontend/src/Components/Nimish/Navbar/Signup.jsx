@@ -8,6 +8,8 @@ import styled from 'styled-components'
 import Login from './Login'
 import axios from "axios"
 
+let BASE_URL = "http://localhost:8080"
+
 const LoginWrapper = styled.div`
 
 font-family: "Proxima Nova"
@@ -27,10 +29,19 @@ const Signup = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ name, setName ] = useState("");
-    const [ signupStatus, setSignupStatus ] = useState("Already have an account?");
+    const [ signupStatus, setSignupStatus ] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
       e.prevent.default();
+      if(password.length<8){
+        alert("Please Fill Approriate Details");
+      }
+      const payload = {
+        name, email, password
+      }
+      let response = await axios.post(`${BASE_URL}/signup`, payload);
+      setSignupStatus(true);
+
       
     }
 
@@ -62,7 +73,7 @@ const Signup = () => {
             <Button type="submit" bg="#Faa619" mr={3} borderRadius="0" color="white" _hover={{bg:"#FAA619", color:"black", transition:"0.1s"}} form="signupForm" >
               SIGN UP
             </Button>
-            <Login message={signupStatus} onClick={ onClose }/>
+            <Login status={signupStatus} closeSignup={ onClose }/>
           </ModalFooter>
         </ModalContent>
       </Modal>
