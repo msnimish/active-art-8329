@@ -17,6 +17,8 @@ import Login from "./Login";
 import axios from "axios";
 import { BASE_URL } from "../../../url";
 
+let BASE_URL = "http://localhost:8080"
+
 const LoginWrapper = styled.div`
   font-family: "Proxima Nova" .SignUpBtn {
     border-left: 1px solid #c7c7c7;
@@ -29,20 +31,26 @@ const LoginWrapper = styled.div`
 `;
 
 const Signup = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [data, setData] = useState({});
-  const [signupStatus, setSignupStatus] = useState(false);
-  console.log(BASE_URL);
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+    const [ name, setName ] = useState("");
+    const [ signupStatus, setSignupStatus ] = useState(false);
 
-  const handleChange= (e)=>{
+    const handleSubmit = async(e) => {
+      e.prevent.default();
+      if(password.length<8){
+        alert("Please Fill Approriate Details");
+      }
+      const payload = {
+        name, email, password
+      }
+      let response = await axios.post(`${BASE_URL}/signup`, payload);
+      setSignupStatus(true);
 
-  }
+      
+    }
 
-  const handleSubmit = async(e) => {
-    e.prevent.default();
-    let response = await axios.post(`${BASE_URL}/signup`,data);
-    alert(response.message);
-    setSignupStatus(true);
 
   };
 
