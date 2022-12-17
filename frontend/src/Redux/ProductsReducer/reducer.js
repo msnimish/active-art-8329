@@ -8,7 +8,7 @@ let list = data.data
 const init = {
   isLoading: false,
   isError: false,
-  products: [...list],
+  products: [],
 };
 
 const reducer = (state = init, { type, payload }) => {
