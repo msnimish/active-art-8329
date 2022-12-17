@@ -11,7 +11,7 @@ const Basket = () => {
       {/* <Text fontSize={"40px"} backgroundColor="teal">.</Text>
       <Text fontSize={"40px"} backgroundColor="teal">Basket</Text> */}
       <Divider />
-      {/* <MybagSec /> */}
+      <MybagSec />
       {/* <MyShipping/> */}
       {/* <MyPaymentSec /> */}
 
