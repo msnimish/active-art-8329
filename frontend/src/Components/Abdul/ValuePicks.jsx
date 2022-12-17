@@ -30,7 +30,7 @@ const ValuePicks = () => {
     },
   ];
   return (
-    <Box>
+    <Box width={{ base: "97%", md: "100%", sm: "90%" }} m="auto">
       <ProductHeader text="Value Picks" />
       <Grid templateColumns="repeat(4, 1fr)" gap={5} mt={8}>
         {images &&

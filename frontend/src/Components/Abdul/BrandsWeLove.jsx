@@ -42,7 +42,7 @@ const BrandsWeLove = () => {
     },
   ];
   return (
-    <Box>
+    <Box width={{ base: "97%", md: "100%", sm: "90%" }} m="auto">
       <ProductHeader text="Brands We Love" />
       <Grid templateColumns="repeat(6, 1fr)" gap={5} mt={8}>
         {images &&

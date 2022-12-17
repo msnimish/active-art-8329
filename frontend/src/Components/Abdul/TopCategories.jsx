@@ -116,7 +116,7 @@ const TopCategories = () => {
   ];
 
   return (
-    <Box>
+    <Box width={{ base: "97%", md: "100%", sm: "90%" }} m="auto">
       <ProductHeader text="Top Categories" />
       <Tabs colorScheme="red">
         <Flex mt={30}>

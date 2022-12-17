@@ -26,7 +26,7 @@ const UnmissableOffers = () => {
     },
   ];
   return (
-    <Box width={{ base: "100%", md: "100%", sm: "100%" }}>
+    <Box width={{ base: "97%", md: "100%", sm: "90%" }} m="auto">
       <ProductHeader text="Unmissable Offers" />
       <Box mt="20px" overflowX="scroll">
         <Flex gap="10px">

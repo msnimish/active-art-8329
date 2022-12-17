@@ -84,7 +84,7 @@ const TopDealsIn = () => {
     },
   ];
   return (
-    <Box>
+    <Box width={{ base: "97%", md: "100%", sm: "90%" }} m="auto">
       <ProductHeader text="TopDealsIn" />
       <Tabs mt="20px" variant="soft-rounded" colorScheme="red">
         <TabList>
