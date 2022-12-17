@@ -7,18 +7,18 @@ const getProductRequest = () => {
   };
 };
 
-const getProduct = (queryParams) => (dispatch) => {
+const getProduct = (dispatch) => {
   
   dispatch(getProductRequest());
   return axios
-    .get(`http://localhost:8080/albums`, queryParams)
+    .get(`http://localhost:8080/albums`)
     .then((res) => {
       dispatch({ type: types.GET_SINGLE_PRODUCT_SUCCESS, payload: res.data });
     })
     .catch(dispatch({ type: types.GET_SINGLE_PRODUCT_FAILURE }));
 };
 
-export { getProductRequest, getProduct };
+export {getProduct };
 
 
 

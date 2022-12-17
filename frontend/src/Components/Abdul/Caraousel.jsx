@@ -60,7 +60,7 @@ const Caraousel = () => {
   return (
     <>
       <Flex
-        width={{ base: "100%", sm: "100%", md: "80%" }}
+        width={{ base: "100%", md: "100%", sm: "100%" }}
         margin="auto"
         bg="#edf3f8"
         mt="40px"
@@ -68,7 +68,11 @@ const Caraousel = () => {
         justifyContent="center"
       >
         <Flex w="full" overflow="hidden" pos="relative">
-          <Flex h="450px" w="full" {...carouselStyle}>
+          <Flex
+            w="full"
+            {...carouselStyle}
+            h={{ base: "250px", md: "450px", sm: "300px" }}
+          >
             {slides.map((slide, sid) => (
               <Box key={`slide-${sid}`} boxSize="full" shadow="md" flex="none">
                 <Text

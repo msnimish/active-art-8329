@@ -1,15 +1,14 @@
 import * as types from "./actionTypes";
+import data from "../../data.json"
+
+
+
+let list = data.data
 
 const init = {
   isLoading: false,
   isError: false,
-  products: [
-    { title: "US Polo t-shirt", brand: "US Polo", price: 5000 },
-    { title: "US Polo t-shirt", brand: "US Polo", price: 5000 },
-    { title: "US Polo t-shirt", brand: "US Polo", price: 5000 },
-    { title: "US Polo t-shirt", brand: "US Polo", price: 5000 },
-    { title: "US Polo t-shirt", brand: "US Polo", price: 5000 },
-  ],
+  products: [],
 };
 
 const reducer = (state = init, { type, payload }) => {
