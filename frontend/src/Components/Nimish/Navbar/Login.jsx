@@ -11,13 +11,16 @@ font-family: "Proxima Nova"
 
 `
 
+const handleClick = () => {}
+
 const Login = (props) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    
+
+    const handleClick = () => {}
 
   return (
     <LoginWrapper>
-        <Button variant='ghost' _hover={ {color:"#FAA619"}} onClick={ onOpen } fontFamily={"Proxima Nova"}>{props.status?"LOGIN":"Already have an account?"}</Button>
+        <Button variant='ghost' _hover={ {color:"#FAA619"}} onClick={ onOpen } fontFamily={"Proxima Nova"}>Already have an account! LOG IN</Button>
 
         <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

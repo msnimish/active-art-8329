@@ -34,7 +34,7 @@ const Signup = () => {
     const handleSubmit = async(e) => {
       e.prevent.default();
       if(password.length<8){
-        alert("Please Fill Approriate Details");
+        alert("Password must be at least 8 characters");
       }
       const payload = {
         name, email, password
@@ -46,9 +46,7 @@ const Signup = () => {
     }
 
     useEffect(() => {
-        axios.post("/signup", (req,res)=>{
-
-        })
+        axios.post(`${BASE_URL}/signup`,)
     }, []);
 
   return (
@@ -73,7 +71,7 @@ const Signup = () => {
             <Button type="submit" bg="#Faa619" mr={3} borderRadius="0" color="white" _hover={{bg:"#FAA619", color:"black", transition:"0.1s"}} form="signupForm" >
               SIGN UP
             </Button>
-            <Login status={signupStatus} closeSignup={ onClose }/>
+            <Login closeSignup={ onClose }/>
           </ModalFooter>
         </ModalContent>
       </Modal>
