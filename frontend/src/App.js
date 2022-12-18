@@ -4,7 +4,7 @@ import './App.css';
 
 // import AllRoutes from './Routes/AllRoutes';
 import Basket from './Pages/Basket';
-// import Footer from './Components/Nimish/Footer/Footer';
+
 
 
 
@@ -13,13 +13,10 @@ function App() {
   return (
     <div className="App">
 
-     {/* <AllRoutes/> */}
-     <Basket/>
-
    
+  
       
-      
-
+<Footer/>
     </div>
   );
 }

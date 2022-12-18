@@ -9,11 +9,13 @@ const SliderFilter = ({baseColor="orange"}) => {
   const [showTooltip, setShowTooltip] = React.useState(false)
 
   return (
-    <Menu>
-    <MenuButton as={Button} minWidth={"200px"} rightIcon={<ChevronDownIcon/>}>
-      Actions
+    <Menu
+   
+    >
+    <MenuButton as={Button}  bg="white" minWidth={"200px"}  rightIcon={<ChevronDownIcon/>}>
+      Select Price Range
     </MenuButton>
-    <MenuList pb={"15px"}>
+    <MenuList pb={"15px"} pl="7px" pr="7px">
 
     <Slider
       id='slider'
@@ -24,6 +26,7 @@ const SliderFilter = ({baseColor="orange"}) => {
       onChange={(v) => setSliderValue(v)}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
+     
     >
       <SliderMark value={2500} mt='1' ml='-2.5' fontSize='sm'>
       ₹2500

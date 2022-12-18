@@ -11,6 +11,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
+    "dotenv": "^16.0.3",
     "framer-motion": "^7.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -24,6 +25,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "server":"json-server --watch data.json --port 7070",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
