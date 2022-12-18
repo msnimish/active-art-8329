@@ -11,7 +11,9 @@ import Overview from '../Components/Rohit/Single/Overview';
 import StaticDetails from '../Components/Rohit/Single/StaticDetails';
 import { addToCart} from "../Redux/CartReducer/action"
 import { getSingleProd } from "../Redux/SingleProductReducer/action"
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import Navbar from '../Components/Nimish/Navbar/Navbar';
+import Footer from '../Components/Nimish/Footer/Footer';
 
 
 
@@ -20,7 +22,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const {id} = useParams()
   const product = useSelector((reduxStore) => reduxStore.SingleProductReducer.product);
- 
+  const navigate = useNavigate();
 
 
   let arr = new Array(7).fill(product)
@@ -28,17 +30,20 @@ const SingleProduct = () => {
 
 
   const toCart = ()=>{
-dispatch(addToCart(product))
+dispatch(addToCart(product));
+navigate("/basket");
   }
 
 
   useEffect(()=>{
 dispatch(getSingleProd(id))
-  })
+  },[])
 
 
 
   return (
+    <>
+    <Navbar/>
     <Container minW={"100%"}>
       <Text mt={"10px"} mb={"10px"}>{product.title}</Text>
       <Flex pb="20px">
@@ -92,6 +97,8 @@ dispatch(getSingleProd(id))
         <SimilarProduct arr={arr} />
       </Box>
     </Container>
+    <Footer/>
+    </>
   )
 }
 

@@ -25,7 +25,7 @@ const Login = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [loginCreds, setLoginCreds] = useState({});
   const navigate = useNavigate();
-  const { isAdmin, isAuth, loading, error } = useSelector((store)=>store.auth);
+  const { isAdmin, isAuth, loading, error } = useSelector((store)=>store.AuthReducer);
   const dispatch = useDispatch();
   const handleChange = (e) => {
     const { name, value } = e.target;

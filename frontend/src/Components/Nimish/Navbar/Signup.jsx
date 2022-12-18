@@ -27,6 +27,11 @@ const LoginWrapper = styled.div`
     background-color: transparent;
     color: #faa619;
   }
+  @media all and (max-width:992px){
+    .SignUpBtn{
+      display:none;
+    }
+  }
 `;
 
 const Signup = () => {

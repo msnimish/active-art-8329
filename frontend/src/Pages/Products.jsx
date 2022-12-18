@@ -8,6 +8,8 @@ import ProductCard from '../Components/Rohit/ProductCard';
 import { getProducts } from '../Redux/ProductsReducer/action';
 import SortFilter from '../Components/Rohit/Filter';
 import Loading from '../Components/Rohit/Loading';
+import Navbar from '../Components/Nimish/Navbar/Navbar';
+import Footer from '../Components/Nimish/Footer/Footer';
 
 
 
@@ -48,7 +50,7 @@ console.log(queryParams)
 
   return (
     <>
-
+    <Navbar/>
     <SortFilter/>
 
       <SimpleGrid minChildWidth={"250px"} spacing='40px'>
@@ -56,7 +58,7 @@ console.log(queryParams)
           productList && productList.map((el, i) => <Box height='500px' key={i}> <ProductCard {...el} /> </Box>)
         }
       </SimpleGrid>
-
+        <Footer/>
     </>
   )
 }

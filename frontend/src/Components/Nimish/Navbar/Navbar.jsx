@@ -16,7 +16,7 @@ import { ProfileMenu } from "./ProfileMenu"
 
 const Navbar = () => {
 
-  const { isAuth } = useSelector((store)=>store.auth)
+  const { isAuth } = useSelector((store)=>store.AuthReducer);
 
   console.log(theme)
 
@@ -44,7 +44,7 @@ const Navbar = () => {
           <MdFavoriteBorder size={"1.5em"} color={"#1E1E1E"}/>
           <chakra.span pos="relative" display="inline-block">
             <HiOutlineShoppingBag size={"1.5em"} color={"#1E1E1E"} className="basketIcon"/>
-            <chakra.span
+            {/* <chakra.span
               pos="absolute"
               top="-1px"
               right="-1px"
@@ -59,8 +59,8 @@ const Navbar = () => {
               bg="#FAA619"
               rounded="full"
             >
-              4
-            </chakra.span>
+              0
+            </chakra.span> */}
           </chakra.span>
           
           {/* <circle className='noOfItems'>4</circle> */}

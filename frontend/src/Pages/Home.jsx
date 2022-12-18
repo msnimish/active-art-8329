@@ -13,9 +13,13 @@ import BrandsWeLove from "../Components/Abdul/BrandsWeLove";
 import TopDealsIn from "../Components/Abdul/TopDealsIn";
 import ValuePicks from "../Components/Abdul/ValuePicks";
 import TopCategories from "../Components/Abdul/TopCategories";
+import Navbar from "../Components/Nimish/Navbar/Navbar";
+import Footer from "../Components/Nimish/Footer/Footer";
 
 const Home = () => {
   return (
+    <>
+    <Navbar/>
     <div>
       <Box width={{ base: "100%", md: "80%", sm: "100%" }} margin="auto">
         {/* Product Caraousel */}
@@ -61,6 +65,8 @@ const Home = () => {
         <ValuePicks />
       </Box>
     </div>
+    <Footer/>
+    </>
   );
 };
 

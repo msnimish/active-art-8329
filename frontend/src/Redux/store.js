@@ -8,7 +8,7 @@ import {reducer as CartReducer} from "./CartReducer/reducer"
 import { AuthReducer } from './AuthReducer/auth.reducer'
 
 
-const rooReducer = combineReducers({ProductsReducer, SingleProductReducer, CartReducer})
+const rootReducer = combineReducers({AuthReducer,ProductsReducer, SingleProductReducer, CartReducer})
 
 
 

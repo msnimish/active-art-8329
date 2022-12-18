@@ -8,6 +8,8 @@ import Basket from '../Pages/Basket'
 
 
 import Admin from '../Pages/Admin'
+import MyShipping from '../Components/Anu/MyShipping'
+import MyPaymentSec from '../Components/Anu/MyPaymentSec'
 
 
 
@@ -21,7 +23,9 @@ const AllRoutes = () => {
       <Route path='/products' element={<Products/>}>Products</Route>
       <Route path='/single' element={<SingleProduct/>}>SingleProduct</Route>
       <Route path='/basket' element={<Basket/>}>Basket</Route>
-      <Route path="/admin" element={<Admin/>}/>
+      <Route path="/admin" element={<Admin/>}>Admin</Route>
+      <Route path="/shipping" element={<MyShipping/>}>Shipping</Route>
+      <Route path="/payment" element={<MyPaymentSec/>}>Payment</Route>
 
       
 

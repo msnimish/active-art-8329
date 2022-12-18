@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import axios from "axios";
+import { BASE_URL } from "../../url";
 
 const getCartRequest = () => {
   return {
@@ -11,7 +12,7 @@ const getCart  = (dispatch) => {
   
   dispatch(getCartRequest());
   return axios
-    .get(`http://localhost:8080/cart/`)
+    .get(`${BASE_URL}cart/`)
     
     .then((res) => {
      
@@ -33,7 +34,7 @@ const addToCartRequest = () => {
 const addToCart = (payload) => (dispatch) => {
   
   return axios
-    .post(`http://localhost:8080/cart/addtocart`, payload)
+    .post(`${BASE_URL}cart/addtocart`, payload)
   console.log("payload", payload)
     .then((res) => {
       console.log('cart')
@@ -47,7 +48,7 @@ const addToCart = (payload) => (dispatch) => {
 const updateCart = (id, payload) => (dispatch) => {
   console.log(id, payload)
   return axios
-    .patch(`http://localhost:8080/cart/updatecart/${id}`,payload )
+    .patch(`${BASE_URL}cart/updatecart/${id}`,payload )
     .then((res) => {
       console.log('cart')
       dispatch({ type: types.UPDATE_CART_SUCCESS, payload: res.data });
@@ -66,7 +67,7 @@ const removeCartRequest = () => {
 const removeCart = (id) => (dispatch) => {
   console.log(id)
   return axios
-    .delete(`http://localhost:8080/cart/removeFromCart/${id}`)
+    .delete(`${BASE_URL}cart/removeFromCart/${id}`)
     .then((res) => {
       console.log('cart')
       dispatch({ type: types.REMOVE_CART_SUCCESS, payload: res.data });
