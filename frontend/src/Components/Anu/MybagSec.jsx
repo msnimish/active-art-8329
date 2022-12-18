@@ -3,25 +3,39 @@ import { Box, Button, Container, Flex, HStack, Img, Stack, Table, Text, VStack }
 import { Divider } from '@chakra-ui/react'
 import { BagModalSec } from "./BagModalSec"
 
+
+
 let items = [
     {
-        image: "https://lmsin.net/cdn-cgi/image/h=294,w=196,q=60,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/lifestyle/1000010426103-White-OffWhite-1000010426103_01-2100.jpg",
-        title: "MELANGE Women Printed A-line Kurta",
-        price: 799,
-        OriginalPrice: 1500,
-        colour: "white",
-        size: "M",
-        details: "Delivery in5-7 days"
-    },
-    {
-        image: "https://lmsin.net/cdn-cgi/image/h=294,w=196,q=60,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/lifestyle/1000010426103-White-OffWhite-1000010426103_01-2100.jpg",
-        title: "MELANGE Women Printed A-line Kurta",
-        price: 799,
-        OriginalPrice: 1500,
-        colour: "white",
-        size: "M",
-        details: "Delivery in5-7 days"
-    },
+        "title": "BOSSINI Men Graphic Printed Crew Neck Regular Fit T-shirt",
+        "price": "350",
+        "strickPrice": "699",
+        "newBaz": "New",
+        "offBaz": "50% OFF",
+        "cat": "topWear",
+        "subCat": "T-Shirt",
+        "brand": "Bossini",
+        "image": "https://lmsin.net/cdn-cgi/image/h=493,w=333,q=60,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/lifestyle/1000011517525-Blue-LightBlue-1000011517525-2022_01-2100.jpg",
+        "type": "",
+        "fit": "Regular Fit",
+        "design": "Graphic Printed",
+        "sleeveLength": ""
+      },
+      {
+        "title": "BOSSINI Men Solid Bomber Jacket",
+        "price": "2639",
+        "strickPrice": "3299",
+        "newBaz": "New",
+        "offBaz": "20% OFF",
+        "cat": "Winterwear",
+        "subCat": "Jacket",
+        "brand": "Bossini",
+        "image": "https://lmsin.net/cdn-cgi/image/h=493,w=333,q=60,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/lifestyle/1000011538716-Green-Olive-1000011538716-2022_01-2100.jpg",
+        "type": "",
+        "fit": "",
+        "design": "Solid",
+        "sleeveLength": ""
+      },
 
 
 
@@ -69,14 +83,14 @@ function MybagSec() {
                                             <Text> {item.title}</Text>
 
                                             <Text display={"flex"} gap={"6px"}>
-                                                <Text color={"gray.400"}>₹ <strike >{item.OriginalPrice}</strike></Text>
+                                                <Text color={"gray.400"}>₹ <strike >{item.strickPrice}</strike></Text>
                                                 <Text>₹{item.price}</Text>
-                                                <Text color={"green"}>₹{item.OriginalPrice - item.price} </Text>
+                                                <Text color={"green"}>₹{item.strickPrice - item.price} </Text>
                                                 <Text color={"green"}>Saved</Text>
                                             </Text>
 
                                             <Text display={"flex"} gap={"6px"}> <Text color={"gray.400"}>Colour:</Text> <Text>{item.colour}</Text></Text>
-                                            <Text display={"flex"} gap={"6px"}> <Text color={"gray.400"}>Size:</Text> <Text>{item.size}</Text></Text>
+                                            <Text display={"flex"} gap={"6px"}> <Text color={"gray.400"}>Size:</Text> <Text>M</Text></Text>
                                         </VStack>
 
                                     </HStack>
@@ -135,7 +149,7 @@ function MybagSec() {
                         <Box fontSize={"14px"} mt={"10%"} display={"flex"} border="1px solid gray" borderColor={"#EFEFEF"} alignItems={"center"} p="10px" justifyContent={"space-between"}>
 
                             <Text>Deliver to </Text>
-                            <Text mr="30%">800001</Text>
+                            <Text mr="30%">700001</Text>
 
                             <Button backgroundColor={"white"} color={"#FAA619"}>Change</Button>
 

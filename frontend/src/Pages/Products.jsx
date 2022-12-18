@@ -2,49 +2,53 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import { useSearchParams } from "react-router-dom"
-
+import { useLocation } from 'react-router-dom';
 
 import ProductCard from '../Components/Rohit/ProductCard';
-import SubCatCard from '../Components/Rohit/SubCatCard';
-import SelectFilter from '../Components/Rohit/SelectFilter';
-import SliderFilter from '../Components/Rohit/SliderFilter';
 import { getProducts } from '../Redux/ProductsReducer/action';
+import SortFilter from '../Components/Rohit/Filter';
+import Loading from '../Components/Rohit/Loading';
 
 
 
 const Products = () => {
+  const location = useLocation()
   const dispatch = useDispatch();
-  const [searchParams, setSearchParams] = useSearchParams()
-
-
- 
+  const [searchParams] = useSearchParams()
 
   const productList = useSelector((reduxStore) => reduxStore.ProductsReducer.products);
+  // console.log(productList)
   
 
-  const query = {}
- query.brand = searchParams.getAll("brand")
- query.cat = searchParams.getAll("cat")
- query.fit = searchParams.getAll("fit")
 
   useEffect(()=>{
-    dispatch(getProducts({params : query}))
-    setSearchParams(query)
-  },[])
+const brand = searchParams.getAll("brand",)
+const type = searchParams.getAll("type")
+const fit = searchParams.getAll("fit")
+const design = searchParams.getAll("design")
+const size = searchParams.getAll("size")
+const sleeveLength = searchParams.getAll("sleeveLength")
+
+
+const queryParams = {
+  params : { brand, type, fit, design, size, sleeveLength }
+ 
+}
+
+console.log(queryParams)
+    dispatch(getProducts(queryParams))
+   
+  },[location.search])
 
 
   if(!productList.length > 0){
-    return <h1>Loading...</h1>
+    return <Loading/>
   }
 
   return (
     <>
-<SubCatCard/>
 
-<SelectFilter/>
-<SliderFilter/>
-      
-
+    <SortFilter/>
 
       <SimpleGrid minChildWidth={"250px"} spacing='40px'>
         {

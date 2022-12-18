@@ -18,7 +18,7 @@ const WinterStore = () => {
     },
   ];
   return (
-    <Box m="auto">
+    <Box width={{ base: "97%", md: "100%", sm: "90%" }} m="auto">
       <ProductHeader text="Winter Store" />
       <Flex mt="30px" gap="15px">
         {images &&
