@@ -1,13 +1,14 @@
-import * as types from "./actionTypes";
+import * as types from "./auth.types";
 
 const initialState = {
     isLoading: false,
     isError: false,
     token: "",
-    isAuth: !!token
+    isAuth: false,
+    isAdmin: false,
 }
 
-const authReducer = (state=initialState, { type, payload}) => {
+const AuthReducer = (state=initialState, { type, payload}) => {
     switch(type){
         case types.Login_Request:
             return{
@@ -17,10 +18,22 @@ const authReducer = (state=initialState, { type, payload}) => {
             }
         
         case types.Login_Success:
-            return {
-                ...state,
-                isLoading: false,
-                token: payload.token
+            localStorage.setItem("userInfo", payload);
+            if(payload.isAdmin){
+                return {
+                    ...state,
+                    isLoading: false,
+                    token: payload.token,
+                    isAuth: true,
+                    isAdmin: true
+                }
+            }else{
+                return {
+                    ...state,
+                    isLoading: false,
+                    token: payload.token,
+                    isAuth: true
+                }
             }
 
         case types.Login_Failure:
@@ -31,7 +44,7 @@ const authReducer = (state=initialState, { type, payload}) => {
             }
 
         case types.Logout_Request:{
-            localStorage.removeItem('token');
+            localStorage.removeItem('userInfo');
             return initialState
         }
 
@@ -39,4 +52,4 @@ const authReducer = (state=initialState, { type, payload}) => {
     }
 }
 
-export { authReducer }
+export { AuthReducer }
