@@ -19,9 +19,9 @@ const productSchema = mongoose.Schema({
     "adminID": {type: String},
     "inStock": {type: Number, required: true},
     "noOfSold": {type: Number},
-    "productLaunchTime": {type: Date}
+    "productLaunchTime": {type: String}
 
-}, {versionKey: false, timeStamps: true});
+}, {versionKey: false, timestamps: true});
 
 const ProductModel = mongoose.model("product", productSchema);
 

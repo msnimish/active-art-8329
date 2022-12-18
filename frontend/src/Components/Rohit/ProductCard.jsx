@@ -1,24 +1,29 @@
 import React from "react";
 import { TbHeartPlus } from "react-icons/tb";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import {Link} from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 
 import "./ProductCard.css";
 import { StackItem } from "@chakra-ui/react";
 
-const ProductCard = ({ title, price, strikedPrice, newBadge, offBadge, image}) => {
+const ProductCard = ({ _id, title, price, strikedPrice, newBadge, offBadge, image}) => {
+const navigate = useNavigate()
 
+    const handleAddToCart = ()=>{
 
+    }
    
 
     return (
         <>
             <div className="container">
-                <img src={image} alt="" />
+                <img onClick={()=>navigate(`/single`)} src={image} alt="" />
                 <TbHeartPlus size={30} className="heart" />
-                {newBaz !== "" ? <div className="baz">{newBadge}</div> : null}
+                {newBadge !== "" ? <div className="baz">{newBadge}</div> : null}
 
-                {offBaz !== "" ? <div className="offBaz">
-                    <p>{offBadge}</p>
+                {offBadge !== "" ? <div className="offBaz">
+                    <p>{`${offBadge} % OFF`}</p>
                     <div className="edge"></div>
                 </div> : null}
 
@@ -55,7 +60,7 @@ const ProductCard = ({ title, price, strikedPrice, newBadge, offBadge, image}) =
                                 <MdKeyboardArrowUp />
                             </div>
                         </div>
-                        <button className="addToCart">ADD TO BASKET</button>
+                        <Link to={handleAddToCart}><button className="addToCart">ADD TO BASKET</button></Link>
                     </div>
                 </div>
             </div>

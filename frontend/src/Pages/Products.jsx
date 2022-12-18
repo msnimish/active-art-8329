@@ -17,8 +17,9 @@ const Products = () => {
   const [searchParams] = useSearchParams()
 
   const productList = useSelector((reduxStore) => reduxStore.ProductsReducer.products);
-  // console.log(productList)
-  
+  const loading = useSelector((reduxStore) => reduxStore.ProductsReducer.isLoading);
+ 
+
 
 
   useEffect(()=>{
@@ -41,7 +42,7 @@ console.log(queryParams)
   },[location.search])
 
 
-  if(!productList.length > 0){
+  if(loading){
     return <Loading/>
   }
 

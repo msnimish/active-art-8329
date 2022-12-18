@@ -1,10 +1,10 @@
 import React from 'react'
 import {Route, Routes} from "react-router-dom"
-
 import Products from '../Pages/Products'
 import SingleProduct from '../Pages/SingleProduct'
-import Test from '../Components/Rohit/Test'
 import Home from "../Pages/Home"
+import Basket from '../Pages/Basket'
+
 
 
 const AllRoutes = () => {
@@ -12,10 +12,12 @@ const AllRoutes = () => {
     <Routes>
 
 
-      {/* <Route path='/' element={<Home/>}>Home</Route> */}
-      <Route path='/p' element={<Products/>}>Products</Route>
-      <Route path='/s' element={<SingleProduct/>}>SingleProduct</Route>
-      <Route path='/t' element={<Test/>}>Rohit Test/dummy route</Route>
+      <Route path='/' element={<Home/>}>Home</Route>
+      <Route path='/products' element={<Products/>}>Products</Route>
+      <Route path='/single' element={<SingleProduct/>}>SingleProduct</Route>
+      <Route path='/basket' element={<Basket/>}>Basket</Route>
+
+      
     </Routes>
   )
 }

@@ -1,13 +1,25 @@
 let express = require("express");
 let cors = require("cors");
 const { connection } = require("./Config/db");
+const { ProductRouter } = require("./Routes/products.routes")
+const { CartRouter } = require("./Routes/cart.routes")
 
 let app = express();
-
+app.use(cors());
 app.use(express.json());
 
-app.use(cors());
 
+app.use("/products", ProductRouter)
+app.use("/cart", CartRouter)
+
+
+app.get("/", async(req, res)=>{
+    res.send({msg:"Welcome to Lyfe Style"})
+})
+
+
+
+console.log(new Date(new Date().getTime()) )
 
 
 app.listen(process.env.PORT, async()=>{

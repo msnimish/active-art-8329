@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Box, Container, Heading, Text, Image, Button} from '@chakra-ui/react'
 import { Flex, Spacer } from '@chakra-ui/react'
@@ -9,28 +9,34 @@ import { BsFillShareFill } from "react-icons/bs"
 import SimilarProduct from '../Components/Rohit/SimilarProduct';
 import Overview from '../Components/Rohit/Single/Overview';
 import StaticDetails from '../Components/Rohit/Single/StaticDetails';
+import { addToCart} from "../Redux/CartReducer/action"
+import { getSingleProd } from "../Redux/SingleProductReducer/action"
+import { useParams } from 'react-router-dom';
 
 
 
 const SingleProduct = () => {
   const [size, setSize] = useState("Select a Size")
   const dispatch = useDispatch();
+  const {id} = useParams()
   const product = useSelector((reduxStore) => reduxStore.SingleProductReducer.product);
+ 
+
+
   let arr = new Array(7).fill(product)
 
-  const addToCart = ()=>{
-
-if(size !== "Select a Size"){
-  product.size = size
-  product.inStock = product.inStock - 1
-  product.quantity = product.quantity + 1 
-  
-  console.log(product)
-}
 
 
-
+  const toCart = ()=>{
+dispatch(addToCart(product))
   }
+
+
+  useEffect(()=>{
+dispatch(getSingleProd(id))
+  })
+
+
 
   return (
     <Container minW={"100%"}>
@@ -67,7 +73,7 @@ if(size !== "Select a Size"){
                 ["SM", "MD", "LG", "XL", "XXL"].map((el, i) => <Flex key={i} onClick={()=>setSize(el)} width="50px" height="40px" ring="1px" ringColor="gray.400" rounded="1px" gap="10px" alignItems="center" fontSize="16px" justifyContent="center" transition=".3s" _active={{ fontSize: "13px" }}><Text fontWeight="400">{el}</Text></Flex>)
               }
             </Flex>
-            <Button onClick={addToCart} colorScheme='orange' rounded="0px" maxW="400px" width="100%" >ADD TO CART</Button>
+            <Button onClick={toCart} colorScheme='orange' rounded="0px" maxW="400px" width="100%" >ADD TO CART</Button>
           </Flex>
           <Flex justifyContent="space-between" maxW="400px">
             <Flex alignItems="center" gap="5px"><TbHeartPlus size={25} />Add to Favourites</Flex>

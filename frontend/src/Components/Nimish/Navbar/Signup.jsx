@@ -17,10 +17,9 @@ import Login from "./Login";
 import axios from "axios";
 import { BASE_URL } from "../../../url";
 
-let BASE_URL = "http://localhost:8080"
-
 const LoginWrapper = styled.div`
-  font-family: "Proxima Nova" .SignUpBtn {
+  font-family: "Proxima Nova" ;
+  .SignUpBtn {
     border-left: 1px solid #c7c7c7;
     border-radius: 0px;
   }
@@ -48,6 +47,10 @@ const Signup = () => {
       let response = await axios.post(`${BASE_URL}/signup`, payload);
       setSignupStatus(true);
 
+      
+    }
+
+    const handleChange = ()=>{
       
     }
 

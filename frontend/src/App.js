@@ -1,4 +1,5 @@
 import './App.css';
+
 // import Footer from './Components/Nimish/Footer/Footer';
 import Navbar from './Components/Nimish/Navbar/Navbar';
 
@@ -16,12 +17,12 @@ function App() {
     <div className="App">
 {/* <Navbar/> */}
      <AllRoutes/>
-     {/* <Basket/> */}
-     <Navbar/>
+     <Basket/>
+     {/* <Navbar/> */}
    
   
       
-<Footer/>
+{/* <Footer/> */}
     </div>
   );
 }
