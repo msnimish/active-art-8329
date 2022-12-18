@@ -5,17 +5,20 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import "./ProductCard.css";
 import { StackItem } from "@chakra-ui/react";
 
-const ProductCard = ({ title, price, strickPrice, newBaz, offBaz, image }) => {
+const ProductCard = ({ title, price, strikedPrice, newBadge, offBadge, image}) => {
+
+
+   
 
     return (
         <>
             <div className="container">
                 <img src={image} alt="" />
                 <TbHeartPlus size={30} className="heart" />
-                {newBaz !== "" ? <div className="baz">{newBaz}</div> : null}
+                {newBaz !== "" ? <div className="baz">{newBadge}</div> : null}
 
                 {offBaz !== "" ? <div className="offBaz">
-                    <p>{offBaz}</p>
+                    <p>{offBadge}</p>
                     <div className="edge"></div>
                 </div> : null}
 
@@ -26,7 +29,7 @@ const ProductCard = ({ title, price, strickPrice, newBaz, offBaz, image }) => {
                             <h3>
                                 <span>₹</span> {price}
                             </h3>
-                            {strickPrice !== "" ? <p><span>₹</span> {strickPrice}</p> : null}
+                            {strikedPrice !== "" ? <p><span>₹</span> {strikedPrice}</p> : null}
                         </div>
                         <p className="title">
                             {title}
