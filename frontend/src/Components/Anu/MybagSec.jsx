@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { getCart, removeCart } from "../../Redux/CartReducer/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,29 +17,18 @@ import {
 import { Divider } from "@chakra-ui/react";
 import { BagModalSec } from "./BagModalSec";
 
+import React from 'react'
+import { Box, Button, Container, Flex, HStack, Img, Stack, Table, Text, VStack } from '@chakra-ui/react'
+import { Divider } from '@chakra-ui/react'
+import { BagModalSec } from "./BagModalSec"
 
-let items = [
-  {
-    image:
-      "https://lmsin.net/cdn-cgi/image/h=294,w=196,q=60,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/lifestyle/1000010426103-White-OffWhite-1000010426103_01-2100.jpg",
-    title: "MELANGE Women Printed A-line Kurta",
-    price: 799,
-    OriginalPrice: 1500,
-    colour: "white",
-    size: "M",
-    details: "Delivery in5-7 days",
-  },
-  {
-    image:
-      "https://lmsin.net/cdn-cgi/image/h=294,w=196,q=60,fit=cover/https://aaeff43fe32172cbcecc-ae2a4e9a8cbc330ede5588dedf56886e.lmsin.net/lifestyle/1000010426103-White-OffWhite-1000010426103_01-2100.jpg",
-    title: "MELANGE Women Printed A-line Kurta",
-    price: 799,
-    OriginalPrice: 1500,
-    colour: "white",
-    size: "M",
-    details: "Delivery in5-7 days",
-  },
-];
+
+
+
+
+
+
+
 
 function MybagSec() {
     const data = useSelector((reduxStote) => reduxStote.CartReducer.products);
@@ -107,6 +97,7 @@ dispatch(removeCart(id))
                     border={"1px solid gray"}
                     mt={"20px"}
                     p="10px"
+
                     borderColor={"#EFEFEF"}
                   >
                     <HStack>
@@ -153,6 +144,8 @@ dispatch(removeCart(id))
                         <Box display={"flex"} ml={"20px"} mt={"-20px"}>
                           <Text color={"gray.400"}>Delivery in </Text>
                           <Text ml={"10px"}>5-7 days</Text>
+
+             
                         </Box>
                       </Box>
 

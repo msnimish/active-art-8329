@@ -34,21 +34,27 @@ const Signup = () => {
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ name, setName ] = useState("");
-    const [ signupStatus, setSignupStatus ] = useState(false);
 
     const handleSubmit = async(e) => {
       e.prevent.default();
-      if(password.length<8){
-        alert("Password must be at least 8 characters");
+      try{
+        if(email = ""){
+          alert("Please fill in all the details");
+        }
+        if(password.length<8){
+          alert("Password must be at least 8 characters");
+        }
+        const payload = {
+          name, email, password
+        }
+        let response = await axios.post(`${BASE_URL}/signup`, payload);
+        alert(response.message);
       }
-      const payload = {
-        name, email, password
+      catch(err){
+        console.log(err);
       }
-      let response = await axios.post(`${BASE_URL}/signup`, payload);
-      setSignupStatus(true);
-
-      
     }
+
 
     const handleChange = ()=>{
       
@@ -57,6 +63,7 @@ const Signup = () => {
     useEffect(() => {
         axios.post(`${BASE_URL}/signup`,)
     }, []);
+
 
   return (
     <LoginWrapper>
@@ -75,7 +82,7 @@ const Signup = () => {
         <ModalContent borderRadius="0px">
           <ModalHeader>SIGN UP</ModalHeader>
           <ModalCloseButton />
-          <ModalBody display="flex" flexDirection="column" gap="10px">
+          <ModalBody>
             <form onSubmit={(e) => handleSubmit(e)} id="signupForm">
               <FormControl display="flex" flexDirection="column" gap="10px">
                 <Input
@@ -83,21 +90,23 @@ const Signup = () => {
                   placeholder="Full Name"
                   borderRadius={"0"}
                   name="name"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <Input
                   fontFamily="Proxima Nova"
                   placeholder="Email"
                   borderRadius={"0"}
                   name="email"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
                 <Input
                   fontFamily="Proxima Nova"
                   placeholder="Password (More than 8 characters)"
                   borderRadius={"0"}
                   name="password"
-                  onChange={(e) => handleChange(e)}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
                 />
               </FormControl>
             </form>

@@ -1,6 +1,5 @@
 import React from "react";
 import Caraousel from "../Components/Abdul/Caraousel";
-import { extendTheme } from "@chakra-ui/react";
 import ProductHeader from "../Components/Abdul/ProductHeader";
 import UnmissableOffers from "../Components/Abdul/UnmissableOffers";
 import WinterStore from "../Components/Abdul/WinterStore";
@@ -12,6 +11,8 @@ import PremiumEdit from "../Components/Abdul/PremiumEdit";
 import BigBrandsBigDiscounts from "../Components/Abdul/BigBrandsBigDiscounts";
 import BrandsWeLove from "../Components/Abdul/BrandsWeLove";
 import TopDealsIn from "../Components/Abdul/TopDealsIn";
+import ValuePicks from "../Components/Abdul/ValuePicks";
+import TopCategories from "../Components/Abdul/TopCategories";
 
 const Home = () => {
   return (
@@ -37,11 +38,11 @@ const Home = () => {
               width="33%"
             />
             <Image
-              src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg"
+              src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit2-13Oct2022.jpg"
               width="33%"
             />
             <Image
-              src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit1-02Dec2022.jpg"
+              src="https://lmsin.net/cdn-cgi/image/w=410,q=70,fit=cover/https://70415bb9924dca896de0-34a37044c62e41b40b39fcedad8af927.lmsin.net/LS-Fest/LS-new/LS-DesktopUberHP-OurBenefit3-13Oct2022.jpg"
               width="33%"
             />
           </Flex>
@@ -53,10 +54,11 @@ const Home = () => {
         <Wathes />
         <HottestDeals />
         <PremiumEdit />
+        <TopCategories />
         <TopDealsIn />
         <BigBrandsBigDiscounts />
         <BrandsWeLove />
-        <HottestDeals />
+        <ValuePicks />
       </Box>
     </div>
   );

@@ -1,6 +1,6 @@
 import { Button, Image, Input, InputGroup, InputLeftElement, theme, chakra } from '@chakra-ui/react';
 import React from 'react';
-import Logo from "../../../Assets/StyleNovaLogo.svg";
+import Logo from "../../../Assets/styleNovaLogo.svg";
 import { NavbarWrapper } from "./Navbar.style.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineSearch, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
@@ -8,11 +8,15 @@ import NavMenu from './NavMenu';
 import MoreMenu from './MoreMenu';
 import { Link } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
-import Login from './Signup';
 import Signup from './Signup';
+import { useSelector } from 'react-redux';
+import { ProfileMenu } from "./ProfileMenu"
+
 
 
 const Navbar = () => {
+
+  const { isAuth } = useSelector((store)=>store.auth)
 
   console.log(theme)
 
@@ -35,7 +39,7 @@ const Navbar = () => {
         </div>
         <div className='rightHalf'>
           <MoreMenu/>
-          <Signup/>
+          {isAuth ? <ProfileMenu/> : <Signup/>}
           <HiSearch size={"1.25em"} color="#1E1e1e" className='searchIcon'/>
           <MdFavoriteBorder size={"1.5em"} color={"#1E1E1E"}/>
           <chakra.span pos="relative" display="inline-block">
