@@ -1,4 +1,6 @@
+
 import "./App.css";
+
 // import Footer from './Components/Nimish/Footer/Footer';
 import Navbar from './Components/Nimish/Navbar/Navbar';
 
@@ -14,6 +16,13 @@ import Basket from "./Pages/Basket";
 function App() {
   return (
     <div className="App">
+
+     <AllRoutes/>
+     <Basket/>
+     {/* <Navbar/> */}
+   
+  
+      
 
     </div>
   );

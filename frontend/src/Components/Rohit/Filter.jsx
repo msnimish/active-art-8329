@@ -275,7 +275,7 @@ const allfill = []
   return (
     <Box width="100%">
       <Heading size="lg" pt="10px">
-        Category
+        Men
       </Heading>
 
       <Flex wrap="wrap" gap="20px" rowGap="20px" pt="20px" pb="30px">
@@ -283,7 +283,7 @@ const allfill = []
         {category &&
           category.map((el, i) => (
             <Box minW="230px" key={i}>
-              <SubCatCard {...el} />
+              {/* <SubCatCard {...el} /> */}
             </Box>
           ))}
       </Flex>

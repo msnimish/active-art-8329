@@ -11,7 +11,7 @@ const getProducts = (queryParams) => (dispatch) => {
   
   dispatch(getProductsRequest());
   return axios
-    .get(`http://localhost:7070/data`, queryParams)
+    .get(`http://localhost:8080/products/`, queryParams)
     .then((res) => {
       console.log('hello')
       dispatch({ type: types.GET_PRODUCTS_SUCCESS, payload: res.data });

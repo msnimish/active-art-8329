@@ -7,18 +7,19 @@ const getProductRequest = () => {
   };
 };
 
-const getProduct = (dispatch) => {
-  
+const getSingleProd =(id)=> (dispatch) => {
+  console.log(id)
   dispatch(getProductRequest());
   return axios
-    .get(`http://localhost:8080/albums`)
+    .get(`http://localhost:8080/singleProduct/${id}`)
     .then((res) => {
+      console.log(res)
       dispatch({ type: types.GET_SINGLE_PRODUCT_SUCCESS, payload: res.data });
     })
     .catch(dispatch({ type: types.GET_SINGLE_PRODUCT_FAILURE }));
 };
 
-export {getProduct };
+export {getSingleProd };
 
 
 
