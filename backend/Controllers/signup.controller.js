@@ -27,7 +27,7 @@ const signup = async (req, res) => {
           from: "stylenova1234@gmail.com",
           to: `${email}`,
           subject: "Sign Up Successfull",
-          text: `Hello ${name} From Style Nova I hope you are buy somthing for me`,
+          text: `Hello ${name} Thanks For Signup in our website we hope you buy somthing for you and your families`,
         };
 
         transporter.sendMail(mailoption, (err, info) => {
