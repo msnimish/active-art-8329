@@ -1,6 +1,14 @@
 import React from 'react'
 import { Box, Img, Stack, Text, Divider, Button, HStack, VStack, FormControl, FormLabel, Input, GridItem, Checkbox } from "@chakra-ui/react"
+import { useNavigate } from 'react-router-dom';
 const MyPaymentSec = () => {
+
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        alert('Payment successful!');
+        navigate("/")
+    }
     return (
         <div>
             <Box>
@@ -258,7 +266,7 @@ const MyPaymentSec = () => {
                                     </Checkbox>
                                 </Box>
                                 <Box w={"100%"}>
-                                    <Button w={"100%"} bg={"#FAA619"} color={"white"} p={"10px"}>PAY NOW</Button>
+                                    <Button w={"100%"} bg={"#FAA619"} color={"white"} p={"10px"} onClick={handleClick}>PAY NOW</Button>
                                 </Box>
                                 <Box display={"flex"} w={"100%"}>
                                 <Text fontSize={"12px"}>By clicking this button, you agree to our</Text>

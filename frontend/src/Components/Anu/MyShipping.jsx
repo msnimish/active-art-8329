@@ -7,8 +7,18 @@ import {
 } from '@chakra-ui/react'
 
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const MyShipping = () => {
+
+    const navigate = useNavigate();
+    const handleClick = ()=>{
+        alert("Address Added");
+        navigate("/payment");
+    }
+
+
+
     return (
         <>
             <Box>
@@ -340,7 +350,7 @@ const MyShipping = () => {
                                     <Button color={"white"} bg={"#FAA619"}
                                     w={["100%","100%","100%"]}
                                     fontSize={{ base: '9px', md: '14px', lg: '16px' }}
-                                    >ADD ADDRESS & CONTINUE</Button>
+                                    onClick={handleClick}>ADD ADDRESS & CONTINUE</Button>
                                 </Box>
 
 
