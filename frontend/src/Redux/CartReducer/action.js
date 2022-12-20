@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import axios from "axios";
+import  BASE_URL  from "../../url";
 
 const getCartRequest = () => {
   return {
@@ -8,13 +9,10 @@ const getCartRequest = () => {
 };
 
 const getCart  = (dispatch) => {
-  
   dispatch(getCartRequest());
   return axios
-    .get(`http://localhost:8080/cart/`)
-    
+    .get(`${BASE_URL}cart`)
     .then((res) => {
-     
       dispatch({ type: types.GET_CART_SUCCESS, payload: res.data });
     })
     .catch(dispatch({ type: types.GET_CART_FAILURE }));
@@ -31,15 +29,19 @@ const addToCartRequest = () => {
 
 
 const addToCart = (payload) => (dispatch) => {
-  
   return axios
-    .post(`http://localhost:8080/cart/addtocart`, payload)
-  console.log("payload", payload)
+    .post(`${BASE_URL}cart/addtocart`, payload)
     .then((res) => {
-      console.log('cart')
+      console.log(res.data)
+      if(res.data.msg === "added"){
+        alert ("added")
+      }else if(res.data.msg === "alreadypresent"){
+        alert ("alreadyPresent")
+        console.log("p")
+      }
       dispatch({ type: types.ADD_CART_SUCCESS, payload: res.data });
     })
-    // .then(()=> dispatch(getCart()))
+    .then(()=> dispatch(getCart))
     .catch(dispatch({ type: types.ADD_CART_FAILURE }));
 };
 
@@ -47,7 +49,7 @@ const addToCart = (payload) => (dispatch) => {
 const updateCart = (id, payload) => (dispatch) => {
   console.log(id, payload)
   return axios
-    .patch(`http://localhost:8080/cart/updatecart/${id}`,payload )
+    .patch(`${BASE_URL}cart/updatecart/${id}`,payload )
     .then((res) => {
       console.log('cart')
       dispatch({ type: types.UPDATE_CART_SUCCESS, payload: res.data });
@@ -66,7 +68,7 @@ const removeCartRequest = () => {
 const removeCart = (id) => (dispatch) => {
   console.log(id)
   return axios
-    .delete(`http://localhost:8080/cart/removeFromCart/${id}`)
+    .delete(`${BASE_URL}cart/removeFromCart/${id}`)
     .then((res) => {
       console.log('cart')
       dispatch({ type: types.REMOVE_CART_SUCCESS, payload: res.data });

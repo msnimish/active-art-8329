@@ -18,7 +18,7 @@ const PremiumEdit = () => {
     },
   ];
   return (
-    <Box>
+    <Box width={{ base: "97%", md: "100%", sm: "90%" }} m="auto">
       <ProductHeader text="The Premium Edit" />
       <Flex mt="30px" gap="15px">
         {images &&

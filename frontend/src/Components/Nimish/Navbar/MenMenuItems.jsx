@@ -1,4 +1,5 @@
 import { MenuGroup, MenuItem } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export const BeautyMenuItemsWrapper = styled.div`
@@ -26,13 +27,18 @@ export const BeautyMenuItemsWrapper = styled.div`
     }
 `
 export const MenMenuItems = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      navigate("/products");
+    }
     return (
         <BeautyMenuItemsWrapper>
             <div className = "container">
                 <div className="Box">
                     <MenuGroup>
                         <MenuItem fontWeight="800" mt={"20px"}><p className="item">Topwear</p></MenuItem>
-                        <MenuItem><p className="item">Casual Shirts</p></MenuItem>
+                        <MenuItem onClick={handleClick}><p className="item">Casual Shirts</p></MenuItem>
                         <MenuItem><p className="item">Formal Shirts</p></MenuItem>
                         <MenuItem><p className="item">Polos</p></MenuItem>
                         <MenuItem><p className="item">T-Shirts</p></MenuItem>

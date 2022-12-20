@@ -21,8 +21,9 @@ const cartSchema = mongoose.Schema({
     "inStock": {type: Number, required: true},
     "noOfSold": {type: Number},
     "productLaunchTime": {type: String},
-    "userID": {type: String}
-});
+    "userID": {type: String},
+    "productID": {type: String, required : true}
+}, {versionKey: false, timestamps: true});
 
 const CartModel = mongoose.model("cart", cartSchema);
 

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { getCart, removeCart } from "../../Redux/CartReducer/action";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,13 +17,16 @@ import {
 import { Divider } from "@chakra-ui/react";
 import { BagModalSec } from "./BagModalSec";
 
-
+import Navbar from "../Nimish/Navbar/Navbar";
+import Footer from "../Nimish/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 
 function MybagSec() {
     const data = useSelector((reduxStote) => reduxStote.CartReducer.products);
     const [qty, setQty] = useState(1);
     const dispatch = useDispatch()
+    const navigate = useNavigate();
  
     console.log(data)
 
@@ -41,7 +45,9 @@ function MybagSec() {
 dispatch(removeCart(id))
   }
  
-
+const handleClick = () => {
+  navigate("/shipping");
+}
 
 
 
@@ -52,6 +58,7 @@ dispatch(removeCart(id))
 
   return (
     <div>
+      <Navbar/>
       <Box w={"85%"} m="auto" h={"auto"}>
         <Text
           fontSize={{
@@ -86,6 +93,7 @@ dispatch(removeCart(id))
                     border={"1px solid gray"}
                     mt={"20px"}
                     p="10px"
+
                     borderColor={"#EFEFEF"}
                   >
                     <HStack>
@@ -132,6 +140,8 @@ dispatch(removeCart(id))
                         <Box display={"flex"} ml={"20px"} mt={"-20px"}>
                           <Text color={"gray.400"}>Delivery in </Text>
                           <Text ml={"10px"}>5-7 days</Text>
+
+             
                         </Box>
                       </Box>
 
@@ -263,6 +273,7 @@ dispatch(removeCart(id))
                 mb={"10px"}
                 borderColor={"#EFEFEF"}
                 backgroundColor={"#FAA619"}
+                onClick={handleClick}
               >
                 Checkout now
               </Button>
@@ -297,6 +308,7 @@ dispatch(removeCart(id))
           </Box>
         </Stack>
       </Box>
+      <Footer/>
     </div>
   );
 }

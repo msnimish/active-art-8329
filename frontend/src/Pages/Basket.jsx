@@ -12,8 +12,6 @@ const Basket = () => {
       <Text fontSize={"40px"} backgroundColor="teal">Basket</Text> */}
       <Divider />
       <MybagSec />
-      <MyShipping/>
-      <MyPaymentSec />
 
 
     </div>

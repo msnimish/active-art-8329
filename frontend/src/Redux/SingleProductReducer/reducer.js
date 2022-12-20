@@ -26,7 +26,7 @@ let single =   {
 const init = {
   isLoading: false,
   isError: false,
-  product: single
+  product: ""
 };
 
 // let single_product =  { title: "US Polo t-shirt", brand: "US Polo", price: 5000 },
