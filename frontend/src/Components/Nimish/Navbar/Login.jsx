@@ -53,6 +53,10 @@ const Login = (props) => {
 
   };
 
+  const handleClick = () => {
+    navigate("/admin");
+  }
+
   if(loading){
     return <h1>Loading...</h1>
   }else if(error){
@@ -102,6 +106,7 @@ const Login = (props) => {
               mr={3}
               borderRadius="0"
               color="white"
+              onClick={handleClick}
               _hover={{ bg: "#FAA619", color: "black", transition: "0.1s" }}
             >
               LOG IN
