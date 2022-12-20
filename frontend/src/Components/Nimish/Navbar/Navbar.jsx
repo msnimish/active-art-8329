@@ -1,6 +1,6 @@
 import { Button, Image, Input, InputGroup, InputLeftElement, theme, chakra } from '@chakra-ui/react';
 import React from 'react';
-import Logo from "../../../Assets/StyleNovaLogo.svg";
+import Logo from "../../../Assets/styleNovaLogo.svg";
 import { NavbarWrapper } from "./Navbar.style.jsx";
 import { MdFavoriteBorder } from "react-icons/md";
 import { HiOutlineSearch, HiOutlineShoppingBag, HiSearch } from "react-icons/hi";
@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const { isAuth } = useSelector((store)=>store.AuthReducer);
 
-  console.log(theme)
+  // console.log(theme)
 
   return (
     <NavbarWrapper>

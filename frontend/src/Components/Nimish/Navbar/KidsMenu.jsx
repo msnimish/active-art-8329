@@ -1,4 +1,4 @@
-import { Menu, MenuButton, MenuList, useDisclosure } from '@chakra-ui/react'
+import { Button, Menu, MenuButton, MenuList, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { KidsMenuItems } from './KidsMenuItems'
@@ -13,8 +13,9 @@ const KidsMenu = () => {
             fontWeight={"800"}
             onMouseEnter={onOpen}
             onMouseLeave={onClose}
+            // onClick={handleClick}
             > 
-               <Link to="/p">Kids</Link>
+            Kids
             </MenuButton>
             </li>
             <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt="13px">
