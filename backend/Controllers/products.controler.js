@@ -6,7 +6,7 @@ const getProducts = async (req, res) => {
     const query = req.query
     console.log(query)
     try {
-        const data = await ProductModel.find(query).limit(10).sort({createdAt: -1})
+        const data = await ProductModel.find(query).limit(20).sort({createdAt: -1})
         res.send(data)
     } catch (err) {
         console.log("Error", err)
@@ -28,9 +28,9 @@ const getSingleProduct = async (req, res) => {
 const createproduct = async (req, res) => {
     const payload = req.body
   
-    console.log(new Date().getTime())
+
     try {
-        await ProductModel.create(payload)
+        await ProductModel.insertMany(payload.data)
         res.send({ msg: "New Product Launched" })
     } catch (err) {
         console.log("Error", err)

@@ -91,7 +91,7 @@ dispatch(getProducts())
         </Box>
       </Flex>
      
-      <SimilarProducts prod={product[0]}/>
+      {/* <SimilarProducts prod={product[0]}/> */}
     </Container>
      : null
     }
