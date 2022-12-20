@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
 import axios from "axios";
-import { BASE_URL } from "../../url";
+import  BASE_URL  from "../../url";
 
 const getCartRequest = () => {
   return {
@@ -9,13 +9,10 @@ const getCartRequest = () => {
 };
 
 const getCart  = (dispatch) => {
-  
   dispatch(getCartRequest());
   return axios
-    .get(`${BASE_URL}cart/`)
-    
+    .get(`${BASE_URL}cart`)
     .then((res) => {
-     
       dispatch({ type: types.GET_CART_SUCCESS, payload: res.data });
     })
     .catch(dispatch({ type: types.GET_CART_FAILURE }));
@@ -32,15 +29,19 @@ const addToCartRequest = () => {
 
 
 const addToCart = (payload) => (dispatch) => {
-  
   return axios
     .post(`${BASE_URL}cart/addtocart`, payload)
-  console.log("payload", payload)
     .then((res) => {
-      console.log('cart')
+      console.log(res.data)
+      if(res.data.msg === "added"){
+        alert ("added")
+      }else if(res.data.msg === "alreadypresent"){
+        alert ("alreadyPresent")
+        console.log("p")
+      }
       dispatch({ type: types.ADD_CART_SUCCESS, payload: res.data });
     })
-    // .then(()=> dispatch(getCart()))
+    .then(()=> dispatch(getCart))
     .catch(dispatch({ type: types.ADD_CART_FAILURE }));
 };
 

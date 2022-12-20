@@ -1,6 +1,6 @@
 import * as types from "./auth.types";
 import axios from "axios";
-import { BASE_URL } from "../../url";
+import  BASE_URL  from "../../url";
 export const login = (creds) => async (dispatch) => {
   dispatch(types.Login_Request);
   try {

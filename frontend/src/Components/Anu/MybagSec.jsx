@@ -17,17 +17,9 @@ import {
 import { Divider } from "@chakra-ui/react";
 import { BagModalSec } from "./BagModalSec";
 
-
 import Navbar from "../Nimish/Navbar/Navbar";
 import Footer from "../Nimish/Footer/Footer";
 import { useNavigate } from "react-router-dom";
-
-
-
-
-
-
-
 
 
 function MybagSec() {

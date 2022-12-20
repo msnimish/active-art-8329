@@ -273,7 +273,7 @@ const allfill = []
   }, [cat,type,fit,design,sleeveLength,size, setSearchParams]);
 
   return (
-    <Box width="100%">
+    <Box width="80%" margin={"auto"}>
       <Heading size="lg" pt="10px">
         Men
       </Heading>

@@ -15,7 +15,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Login from "./Login";
 import axios from "axios";
-import { BASE_URL } from "../../../url";
+import  BASE_URL  from "../../../url";
 
 const LoginWrapper = styled.div`
   font-family: "Proxima Nova" ;

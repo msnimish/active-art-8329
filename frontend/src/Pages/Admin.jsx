@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo  from "../Assets/styleNovaLogo.svg";
+import Logo  from "../Assets/StyleNovaLogo.svg";
 import { useDisclosure, useColorModeValue, Flex, Icon, Box,Drawer, DrawerOverlay, Collapse, Input, InputGroup, Avatar, InputLeftElement, DrawerContent, IconButton, Image,Tabs, Tab, TabPanels, TabPanel, TabList } from "@chakra-ui/react";
 
 import { MdHome, MdKeyboardArrowRight } from "react-icons/md"

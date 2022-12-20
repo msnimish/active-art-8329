@@ -4,51 +4,53 @@ import { Box, Container, Heading, Text, Image, Button} from '@chakra-ui/react'
 import { Flex, Spacer } from '@chakra-ui/react'
 import { TbHeartPlus } from "react-icons/tb"
 import { BsFillShareFill } from "react-icons/bs"
+import Alert from '../Components/Rohit/Alert';
 
 
-import SimilarProduct from '../Components/Rohit/SimilarProduct';
 import Overview from '../Components/Rohit/Single/Overview';
 import StaticDetails from '../Components/Rohit/Single/StaticDetails';
 import { addToCart} from "../Redux/CartReducer/action"
-import { getSingleProd } from "../Redux/SingleProductReducer/action"
+import { getSingleProduct } from "../Redux/SingleProductReducer/action"
+import { getProducts } from '../Redux/ProductsReducer/action';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../Components/Nimish/Navbar/Navbar';
 import Footer from '../Components/Nimish/Footer/Footer';
+import SimilarProducts from '../Components/Rohit/SimilarProducts';
 
 
 
 const SingleProduct = () => {
   const [size, setSize] = useState("Select a Size")
   const dispatch = useDispatch();
-  const {id} = useParams()
+  const {productID} = useParams()
+
   const product = useSelector((reduxStore) => reduxStore.SingleProductReducer.product);
-  const navigate = useNavigate();
-
-
-  let arr = new Array(7).fill(product)
-
-
 
   const toCart = ()=>{
-dispatch(addToCart(product));
-navigate("/basket");
+    if(product[0].price != 750){
+      
+      dispatch(addToCart(product[0]));
+    }else{
+      alert ("Select a size")
+    }
   }
 
 
   useEffect(()=>{
-dispatch(getSingleProd(id))
-  },[])
-
-
+dispatch(getSingleProduct(productID))
+dispatch(getProducts())
+  },[productID])
 
   return (
     <>
     <Navbar/>
-    <Container minW={"100%"}>
-      <Text mt={"10px"} mb={"10px"}>{product.title}</Text>
+    {
+      product ?   
+       <Container minW={"80%"}>
+      <Text mt={"10px"} mb={"10px"}>{product[0].title}</Text>
       <Flex pb="20px">
         <Box width={"35%"}>
-          <Image objectFit={"cover"} width={"100%"} src={product.image} alt='Dan Abramov' />
+          <Image objectFit={"cover"} width={"100%"} src={product[0].image} alt='Dan Abramov' />
         </Box>
 
         <Spacer />
@@ -57,16 +59,16 @@ dispatch(getSingleProd(id))
           <Box display="flex" flexDirection="column">
             <Box display={"flex"} alignItems="center">
               <Heading mt="0px" fontSize="xl" color="red.400">₹</Heading>
-              <Heading fontSize="3xl" color="red.600">{product.price}</Heading>
+              <Heading fontSize="3xl" color="red.600">{product[0].price}</Heading>
               <Box display="flex" alignItems="baseline"><Text fontSize="md" color="gray.500" ml="10px" >Inclusive of all taxes</Text></Box>
             </Box>
             <Box display="flex" gap="10px">
-              <Text>{product.price}</Text> | <Text>Save ₹ 200 (20.02%)</Text>
+              <Text>{product[0].price}</Text> | <Text>Save ₹ 200 (20.02%)</Text>
             </Box>
             <Text color="orange">Free shipping on all orders</Text>
           </Box>
           <Flex direction="column" gap="10px">
-            <Image src={product.image} width="50px" height="50px" p="3px" ring="1px" ringOffset="2px" rounded="5px" ringColor="orange" />
+            <Image src={product[0].image} width="50px" height="50px" p="3px" ring="1px" ringOffset="2px" rounded="5px" ringColor="orange" />
             <Box display="flex" gap="5px"><Text color="gray">Color :</Text>{"Select a color"}</Box>
           </Flex>
           <Flex direction="column" gap="15px">
@@ -85,18 +87,14 @@ dispatch(getSingleProd(id))
             <Flex alignItems="center" gap="5px"><BsFillShareFill size={20} />Share</Flex>
           </Flex>
           <StaticDetails />
-          <Overview />
+          <Overview prod={product[0]}/>
         </Box>
       </Flex>
-      <Box>
-        <Heading size="xl" mt="10px" mb="10px">You may also like</Heading>
-        <SimilarProduct arr={arr} />
-      </Box>
-      <Box>
-        <Heading size="xl" mt="10px" mb="10px">Customers Also Viewed</Heading>
-        <SimilarProduct arr={arr} />
-      </Box>
+     
+      <SimilarProducts prod={product[0]}/>
     </Container>
+     : null
+    }
     <Footer/>
     </>
   )

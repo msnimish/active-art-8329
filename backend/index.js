@@ -23,6 +23,21 @@ app.get("/", async(req, res)=>{
 })
 
 
+let obj = {
+  name : "Rohit",
+  age : 28,
+  city : "LKO"
+}
+
+
+
+
+
+
+
+
+
+
 
 
 app.use("/user", userRouter);

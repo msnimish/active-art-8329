@@ -1,6 +1,6 @@
 import * as types from "./actionTypes";
 import axios from "axios";
-import { BASE_URL } from "../../url";
+import  BASE_URL  from "../../url";
 
 const getProductsRequest = () => {
   return {

@@ -3,7 +3,7 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FiTwitter } from "react-icons/fi";
 import { GrInstagram } from "react-icons/gr";
 import React from 'react';
-import Logo from "../../../Assets/styleNovaLogo.svg"
+import Logo from "../../../Assets/StyleNovaLogo.svg"
 
 const Footer = () => {
 

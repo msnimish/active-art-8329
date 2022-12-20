@@ -3,9 +3,8 @@ const { ProductModel } = require("../Models/Products.Model")
 const { CartModel }  = require("../Models/Cart.Model")
 
 const getProducts = async (req, res) => {
-    
     const query = req.query
-
+    console.log(query)
     try {
         const data = await ProductModel.find(query).limit(10).sort({createdAt: -1})
         res.send(data)
@@ -15,12 +14,10 @@ const getProducts = async (req, res) => {
     }
 }
 
-const getSingle = async (req, res) => {
-    
-    const {id} = req.params
-
+const getSingleProduct = async (req, res) => {
+    const {productID} = req.params
     try {
-        const data = await ProductModel.find({_id:id})
+        const data = await ProductModel.find({_id:productID})
         res.send(data)
     } catch (err) {
         console.log("Error", err)
@@ -30,6 +27,8 @@ const getSingle = async (req, res) => {
 
 const createproduct = async (req, res) => {
     const payload = req.body
+  
+    console.log(new Date().getTime())
     try {
         await ProductModel.create(payload)
         res.send({ msg: "New Product Launched" })
@@ -38,8 +37,6 @@ const createproduct = async (req, res) => {
         res.send({msg:"err"})
     }
 }
-
-
 
 const deleteproduct = async (req, res) => {
     const {productID} = req.params
@@ -52,7 +49,6 @@ const deleteproduct = async (req, res) => {
         res.send({msg:"err"})
     }
 }
-
 
 const updateproduct = async (req, res) => {
     const {productID} = req.params
@@ -83,19 +79,23 @@ const getcart = async (req, res) => {
 
 const addtocart = async (req, res) => {
     const payload = req.body
-    const userID = req.headers
-    const productID = req.headers
-    console.log("Hello")
+   
+    console.log(payload)
+
     try {
-        await CartModel.create(payload)
-        // const prod = await CartModel.findByIdAndUpdate({productID : productID}, payload)
-        // if(prod){
-        // }else{
-        // }
-        res.send({ msg: "New Product added to the cart" })
+
+        const product = await CartModel.findOne({productID : payload._id})
+        if(product){
+            res.send({"msg":"alreadypresent"})
+        }else{
+            payload.productID = payload._id
+            delete payload._id
+            await CartModel.create(payload)
+            res.send({ "msg": "added" })
+        }  
     } catch (err) {
         console.log("Error", err)
-        res.send({msg:"err"})
+        res.send({"msg":"err"})
     }
 }
 
@@ -115,7 +115,6 @@ const updateCart = async (req, res) => {
 
 const removeFromCart = async (req, res) => {
     const {id} = req.params
-    console.log("Para,", req.params)
     try {
         await CartModel.findByIdAndDelete({_id:id})
         res.send({ msg: "product deleted" })
@@ -126,4 +125,4 @@ const removeFromCart = async (req, res) => {
 }
 
 
-module.exports = { createproduct, getProducts, deleteproduct, updateproduct, getcart, addtocart, removeFromCart, updateCart, getSingle }
+module.exports = { createproduct, getProducts, deleteproduct, updateproduct, getcart, addtocart, removeFromCart, updateCart, getSingleProduct }

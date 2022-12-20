@@ -2,25 +2,23 @@ import * as types from "./actionTypes";
 import axios from "axios";
 import BASE_URL from "../../url.js"
 
-const getProductRequest = () => {
+const getSingleProductRequest = () => {
   return {
     type: types.GET_SINGLE_PRODUCT_REQUEST,
   };
 };
 
-const getSingleProd =(id)=> (dispatch) => {
-  console.log(id)
-  dispatch(getProductRequest());
+const getSingleProduct =(productID)=> (dispatch) => {
+  dispatch(getSingleProductRequest());
   return axios
-    .get(`${BASE_URL}singleProduct/${id}`)
+    .get(`${BASE_URL}products/singleProduct/${productID}`)
     .then((res) => {
-      console.log(res)
       dispatch({ type: types.GET_SINGLE_PRODUCT_SUCCESS, payload: res.data });
     })
     .catch(dispatch({ type: types.GET_SINGLE_PRODUCT_FAILURE }));
 };
 
-export {getSingleProd };
+export {getSingleProduct };
 
 
 
