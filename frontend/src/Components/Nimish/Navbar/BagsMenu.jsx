@@ -13,8 +13,9 @@ const BagsMenu = () => {
             fontWeight={"800"}
             onMouseEnter={onOpen}
             onMouseLeave={onClose}
+            // onClick={handleClick}
             > 
-              <Link to="/p">Shoes & Bags</Link>
+              Shoes & Bags
             </MenuButton>
             </li>
             <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt="13px">

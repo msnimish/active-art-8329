@@ -98,19 +98,19 @@ const Dashboard = () => {
         {
         id: 2,
         name: "Anubra",
-        email: "daggy@gmail.com",
+        email: "anubra@gmail.com",
         created: "23 hours ago",
         },
         {
         id: 3,
         name: "Josef",
-        email: "daggy@gmail.com",
+        email: "josef@gmail.com",
         created: "A few seconds ago",
         },
         {
         id: 4,
         name: "Sage",
-        email: "daggy@gmail.com",
+        email: "sage@gmail.com",
         created: "A few hours ago",
         },
     ];

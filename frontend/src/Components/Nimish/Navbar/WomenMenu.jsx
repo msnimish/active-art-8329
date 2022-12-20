@@ -1,4 +1,4 @@
-import { Menu, MenuButton, MenuList, useDisclosure } from '@chakra-ui/react'
+import { Button, Menu, MenuButton, MenuList, useDisclosure } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { WomenMenuItems } from './WomenMenuItems'
@@ -14,8 +14,9 @@ const WomenMenu = () => {
             fontWeight={"800"}
             onMouseEnter={onOpen}
             onMouseLeave={onClose}
+            // onClick={handleClick}
             > 
-                <Link to="/p">Women</Link>
+            Women
             </MenuButton>
             </li>
             <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt="13px">

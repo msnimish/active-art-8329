@@ -13,8 +13,9 @@ const BeautyMenu = () => {
             fontWeight={"800"}
             onMouseEnter={onOpen}
             onMouseLeave={onClose}
+            // onClick={handleClick}
             > 
-                <Link to="/p">Beauty</Link>
+                Beauty
             </MenuButton>
             </li>
             <MenuList onMouseEnter={onOpen} onMouseLeave={onClose} mt="13px">
