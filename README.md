@@ -37,21 +37,23 @@ Style Nova is an ecommerce website that brings together multiple concepts under 
 ### Home Page
 ![image](https://user-images.githubusercontent.com/96005514/209302001-1a09824a-c677-4494-a8b1-9b63424d7cb5.png)
 
-### Login/Sign Up Page
-![image](https://user-images.githubusercontent.com/96005514/209302081-ee3db0cb-2942-494d-891d-74e1c227e875.png)
-![image](https://user-images.githubusercontent.com/96005514/209302142-573eb0b8-49e9-41bd-aa23-0b67053e282d.png)
+### Sign Up/Login Page
+![image](https://user-images.githubusercontent.com/94216507/209809135-baf82107-18a9-4d80-91f1-055acffe878e.png)
 
-### Admin Dashboard
-![image](https://user-images.githubusercontent.com/96005514/209302258-53129369-00cb-46f2-a88e-b2510c4c4321.png)
-![image](https://user-images.githubusercontent.com/96005514/209302293-a8cbfbe3-70e4-42ac-be6c-d53c8a3e1349.png)
+### Products Page
+![image](https://user-images.githubusercontent.com/94216507/209809555-8a876708-c4f2-4d3e-ba36-adbc754b561d.png)
 
-### Chat Room
-![image](https://user-images.githubusercontent.com/96005514/209302388-ec8f5119-b2a8-42ed-a5b6-e1bac9655651.png)
+### Cart Page
+![image](https://user-images.githubusercontent.com/94216507/209812227-30a76cb1-9849-479d-9364-1d620e1d5a40.png)
+
+### Admin
+![image](https://user-images.githubusercontent.com/94216507/209811388-6715eb53-a299-48e2-a0e0-5548b11119fd.png)
 
 
 ## Developers
 
- - **[Himanshu Dhami](https://github.com/Dhamisir)**
- - **[Saksham Selwal](https://github.com/skshm2000)**
- - **[Vikalp Shandialya](https://github.com/vikalp1999)**
  - **[Nimish M.S](https://github.com/msnimish)**
+ - **[Rohit Kumar](https://github.com/rohit0985)**
+ - **[Abdul Quadir](https://github.com/abdulquadir77)**
+ - **[Anu Pratap Singh](https://github.com/AnuPratap10)**
+ 
