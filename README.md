@@ -1,5 +1,6 @@
 # StyleNova  
-**[Deployed Link](https://stylenova.netlify.app/)**
+#**[Deployed Link](https://stylenova.netlify.app/)**
+
 Style Nova is an ecommerce website that brings together multiple concepts under one roof – Apparel, Footwear, Children’s Wear, Beauty & Accessories offering a convenient one stop shop and a choice of leading national & international brands to customers.
 
 ## Functionalities :
@@ -34,8 +35,8 @@ Style Nova is an ecommerce website that brings together multiple concepts under 
 
 ## Some Snapshots Of project
 
-### Home Page
-![image](https://user-images.githubusercontent.com/96005514/209302001-1a09824a-c677-4494-a8b1-9b63424d7cb5.png)
+### Landing Page
+![image](https://user-images.githubusercontent.com/94216507/209812390-77c6b886-1ffe-482a-8c37-09d54c978000.png)
 
 ### Sign Up/Login Page
 ![image](https://user-images.githubusercontent.com/94216507/209809135-baf82107-18a9-4d80-91f1-055acffe878e.png)
