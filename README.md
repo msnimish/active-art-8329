@@ -1,5 +1,5 @@
 # StyleNova  
-#**[Deployed Link](https://stylenova.netlify.app/)**
+**[Deployed Link](https://stylenova.netlify.app/)**
 
 Style Nova is an ecommerce website that brings together multiple concepts under one roof – Apparel, Footwear, Children’s Wear, Beauty & Accessories offering a convenient one stop shop and a choice of leading national & international brands to customers.
 
